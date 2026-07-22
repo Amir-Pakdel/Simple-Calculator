@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ماشین حساب‌های ترکیبی</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="main-container">
+        <h1>🧮 ماشین حساب‌های ترکیبی</h1>
+        
+        <div class="button-container">
+            <button class="nav-btn active" onclick="showCalculator('exchange')">💱 تبدیل ارز</button>
+            <button class="nav-btn" onclick="showCalculator('white')">🔢 ماشین حساب</button>
+            <button class="nav-btn" onclick="showCalculator('bmi')">⚖️ محاسبه BMI</button>
+        </div>
+
+        <!-- Exchange Rate Calculator -->
+        <div id="exchange" class="calculator-section active">
+            <div class="exchange-wrapper">
+                <h2>تبدیل ارز</h2>
+                <p>ارز و مقدار را انتخاب کنید تا نرخ تبدیل را ببینید</p>
+                
+                <div class="currency">
+                    <select id="currency-one">
+                        <option value="USD" selected>USD - دلار آمریکا</option>
+                        <option value="EUR">EUR - یورو</option>
+                        <option value="GBP">GBP - پوند انگلیس</option>
+                        <option value="IRR">IRR - ریال ایران</option>
+                        <option value="AED">AED - درهم امارات</option>
+                        <option value="TRY">TRY - لیر ترکیه</option>
+                        <option value="CNY">CNY - یوان چین</option>
+                        <option value="JPY">JPY - ین ژاپن</option>
+                    </select>
+                    <input type="number" id="amount-one" placeholder="0" value="1" />
+                </div>
+
+                <div class="swap-rate-container">
+                    <button class="swap-btn" id="swap">🔄 جابجایی</button>
+                    <div class="rate" id="rate"></div>
+                </div>
+
+                <div class="currency">
+                    <select id="currency-two">
+                        <option value="IRR" selected>IRR - ریال ایران</option>
+                        <option value="USD">USD - دلار آمریکا</option>
+                        <option value="EUR">EUR - یورو</option>
+                        <option value="GBP">GBP - پوند انگلیس</option>
+                        <option value="AED">AED - درهم امارات</option>
+                        <option value="TRY">TRY - لیر ترکیه</option>
+                        <option value="CNY">CNY - یوان چین</option>
+                        <option value="JPY">JPY - ین ژاپن</option>
+                    </select>
+                    <input type="number" id="amount-two" placeholder="0" />
+                </div>
+            </div>
+        </div>
+
+        <!-- White Calculator -->
+        <div id="white" class="calculator-section">
+            <div class="white-calc">
+                <div class="output">
+                    <input type="text" class="text" value="" placeholder="0">
+                </div>
+                <div>
+                    <input type="button" value="AC" class="op AC">
+                    <input type="button" value="DEL" class="op DEL">
+                    <input type="button" value="%" class="op val">
+                    <input type="button" value="/" class="op val">
+                </div>
+                <div>
+                    <input type="button" value="7" class="val">
+                    <input type="button" value="8" class="val">
+                    <input type="button" value="9" class="val">
+                    <input type="button" value="*" class="op val">
+                </div>
+                <div>
+                    <input type="button" value="4" class="val">
+                    <input type="button" value="5" class="val">
+                    <input type="button" value="6" class="val">
+                    <input type="button" value="-" class="op val">
+                </div>
+                <div>
+                    <input type="button" value="1" class="val">
+                    <input type="button" value="2" class="val">
+                    <input type="button" value="3" class="val">
+                    <input type="button" value="+" class="op val">
+                </div>
+                <div>
+                    <input type="button" value="." class="op val">
+                    <input type="button" value="0" class="val">
+                    <input type="button" value="=" class="equal op">
+                </div>
+            </div>
+        </div>
+
+        <!-- BMI Calculator -->
+        <div id="bmi" class="calculator-section">
+            <div class="bmi-container">
+                <h2>محاسبه شاخص توده بدنی (BMI)</h2>
+                <label>قد شما (سانتی‌متر):</label>
+                <input type="number" id="height" value="180" placeholder="قد خود را وارد کنید">
+                
+                <label>وزن شما (کیلوگرم):</label>
+                <input type="number" id="weight" value="80" placeholder="وزن خود را وارد کنید">
+                
+                <button class="bmi-btn" id="btn">محاسبه BMI</button>
+                
+                <input disabled type="text" class="bmi-result" id="bmi-result">
+                <h4 class="weight-condition">وضعیت وزن: <span id="weight-condition"></span></h4>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
